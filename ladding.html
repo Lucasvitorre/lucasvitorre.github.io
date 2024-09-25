@@ -32,6 +32,11 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             color: white;
             background-color: rgba(0, 0, 0, 0);
+            transition: background-color 0.3s ease;
+        }
+
+        header.scrolled {
+            background-color: black; /* Cor preta quando rola a página */
         }
 
         header .name {
@@ -77,14 +82,15 @@
             border: 1px solid #ccc;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            width: 45%;
+            width: 100%; /* Mudado para 100% para preencher a tela em dispositivos móveis */
             background-color: #f9f9f9;
             border-radius: 8px;
             color: black;
+            max-width: 600px; /* Define um tamanho máximo para desktop */
         }
 
         .card h2 {
-            margin-bottom: 1px;
+            margin-bottom: 10px;
             color: #333;
         }
 
@@ -92,33 +98,18 @@
             color: #666;
         }
 
-        .card img {
-            width: 200px auto;
-            height: 210px;
-            border-radius: 8px;
-            cursor: pointer; /* Cursor de ponteiro para indicar clique */
-        }
-
-        .projects-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin: 20px auto;
-            width: 80%;
-        }
-
         .project-card {
-            width: 30%;
+            width: calc(33% - 20px); /* Ajuste para manter os cards com um espaçamento */
             border: 1px solid #ccc;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px; /* Adicionado para espaçamento entre os cards */
         }
 
         .project-card img {
             width: 100%;
-            height: 100%;
+            height: auto; /* Mantém a proporção da imagem */
             object-fit: cover;
             cursor: pointer; /* Cursor de ponteiro para indicar clique */
         }
@@ -168,6 +159,21 @@
             cursor: pointer;
         }
 
+        /* Botão flutuante */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #0077b5;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+            display: none; /* Escondido por padrão */
+            z-index: 1000;
+        }
+
         @keyframes gradient {
             0% {
                 background-position: 0% 50%;
@@ -177,6 +183,18 @@
             }
             100% {
                 background-position: 0% 50%;
+            }
+        }
+
+        /* Estilo responsivo */
+        @media (max-width: 768px) {
+            .project-card {
+                width: 100%; /* Preenche toda a largura em dispositivos móveis */
+            }
+
+            .cards-container {
+                flex-direction: column; /* Alinha os cards verticalmente */
+                align-items: center; /* Centraliza os cards */
             }
         }
     </style>
@@ -205,11 +223,6 @@
                 <p>Realizo automações de tarefas repetitivas com Python e crio dashboards para análise de dados.</p>
                 <p>Também crio soluções para empresas nessas áreas. É literalmente o meu hobby, então faço isso por paixão, sempre buscando aprender e fazer o melhor.</p>
             </div>
-
-            <!-- Card com Imagem -->
-            <div class="card">
-                <img src="/imagens/LUCAS-PROFILE-1.jpg" alt="Minha foto" class="clickable-img">
-            </div>
         </div>
 
         <!-- Segundo Separador -->
@@ -217,39 +230,44 @@
 
         <h2>Meus Projetos</h2>
 
+        <hr class="separator">
+
         <!-- Container para os projetos -->
-        <div class="projects-container">
+        <div class="projects-container" style="display: flex; flex-wrap: wrap; justify-content: center;">
             <!-- Card Projeto 1 -->
             <div class="project-card">
-                <img src="/imagens/Relatório-de-Vendas.jpg.png" alt="Relatório Faturamento" class="clickable-img">
+                <img src="/imagens/Relatório-de-Vendas.png" alt="Faturamento" class="clickable-img">
+                <p><a href="link_do_projeto_1" style="color: white;">Faturamento</a></p>
+                <p>Dashboard para verificar o faturamento durante os meses, conseguimos verificar o produto mais vendido, marca, e o mês com maior faturamento, além da localicadade.</p>
             </div>
 
             <!-- Card Projeto 2 -->
             <div class="project-card">
-                <img src="/imagens/projeto2.jpg" alt="Projeto 2" class="clickable-img">
+                <img src="/imagens/DashBoard-de-Producao.png" alt="Projeto 2" class="clickable-img">
+                <p><a href="link_do_projeto_2" style="color: white;">DashBoard de Produção</a></p>
+                <p>Dashboard para acompanhamento da producao da unidade, conseguimos filtrar por operador para uma analise individual.</p>
             </div>
 
             <!-- Card Projeto 3 -->
             <div class="project-card">
-                <img src="/imagens/projeto3.jpg" alt="Projeto 3" class="clickable-img">
+                <img src="/imagens/DashBoard-de-RH.png" alt="Projeto 3" class="clickable-img">
+                <p><a href="link_do_projeto_3" style="color: white;">DashBoard RH</a></p>
             </div>
 
             <!-- Card Projeto 4 -->
             <div class="project-card">
-                <img src="/imagens/projeto4.jpg" alt="Projeto 4" class="clickable-img">
+                <img src="/imagens/DashBoard-Financeiro.png" alt="Projeto 4" class="clickable-img">
+                <p><a href="link_do_projeto_4" style="color: white;">DashBoard Financeiro</a></p>
             </div>
 
             <!-- Card Projeto 5 -->
             <div class="project-card">
-                <img src="/imagens/projeto5.jpg" alt="Projeto 5" class="clickable-img">
-            </div>
-
-            <!-- Card Projeto 6 -->
-            <div class="project-card">
-                <img src="/imagens/projeto6.jpg" alt="Projeto 6" class="clickable-img">
+                <img src="/imagens/Agendamento.png" alt="Projeto 5" class="clickable-img">
+                <p><a href="link_do_projeto_5" style="color: white;">Agendamento Integrado ao Google Agenda</a></p>
             </div>
         </div>
 
+        <button class="back-to-top" onclick="scrollToTop()">↑</button>
     </main>
 
     <!-- Modal para exibir a imagem ampliada -->
@@ -259,38 +277,50 @@
     </div>
 
     <script>
-        // Seleciona todas as imagens clicáveis
-        var images = document.querySelectorAll('.clickable-img');
-        var modal = document.getElementById('myModal');
-        var modalImg = document.getElementById('imgModal');
-        var closeBtn = document.getElementsByClassName('close')[0];
-        var currentLink = ""; // Variável para armazenar o link atual
-    
-        // Para cada imagem, adiciona o evento de clique para abrir a modal
-        images.forEach(function(image) {
-            image.onclick = function() {
-                modal.style.display = 'block';
-                modalImg.src = this.src; // Atribui a mesma imagem à modal
-                currentLink = this.alt; // Armazena o link do 'alt' da imagem
+        // Função para mudar a cor do cabeçalho ao rolar a página
+        window.onscroll = function() {
+            var header = document.querySelector("header");
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
             }
-        });
-    
-        // Evento para fechar a modal quando clicar no 'X'
-        closeBtn.onclick = function() {
-            modal.style.display = 'none';
+
+            // Mostrar o botão de voltar ao topo
+            var backToTopBtn = document.querySelector('.back-to-top');
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopBtn.style.display = 'block';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        };
+
+        // Função para abrir a modal com a imagem ampliada
+        var modal = document.getElementById("myModal");
+        var img = document.getElementsByClassName("clickable-img");
+        var modalImg = document.getElementById("imgModal");
+        var span = document.getElementsByClassName("close")[0];
+
+        for (var i = 0; i < img.length; i++) {
+            img[i].onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
         }
-    
-        // Fecha a modal se clicar fora da imagem
-        modal.onclick = function(event) {
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
             if (event.target == modal) {
-                modal.style.display = 'none';
+                modal.style.display = "none";
             }
         }
-    
-        // Redireciona para o link armazenado no alt ao clicar na imagem ampliada
-        modalImg.onclick = function() {
-            window.open(currentLink, '_blank'); // Abre o link em uma nova aba
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
-    
+</body>
 </html>
