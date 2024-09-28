@@ -112,6 +112,22 @@
             height: auto; /* Mantém a proporção da imagem */
             object-fit: cover;
             cursor: pointer; /* Cursor de ponteiro para indicar clique */
+
+        }
+        .project-card1{
+            width: calc(33% - 20px); /* Ajuste para manter os cards com um espaçamento */
+            border-radius: 8px;
+            overflow: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 5px; /* Adicionado para espaçamento entre os cards */      
+
+        }
+
+        .project-card1 img{
+            width: 30%;
+            height: auto; /* Mantém a proporção da imagem */
+            object-fit: cover;
+            cursor: pointer; /* Cursor de ponteiro para indicar clique */
         }
 
         .project-card:hover {
@@ -162,13 +178,13 @@
         /* Botão flutuante */
         .back-to-top {
             position: fixed;
-            bottom: 20px;
+            bottom: 30px;
             right: 20px;
             background-color: #0077b5;
             color: white;
             border: none;
             border-radius: 50%;
-            padding: 10px;
+            padding: 25px;
             cursor: pointer;
             display: none; /* Escondido por padrão */
             z-index: 1000;
@@ -225,10 +241,37 @@
             </div>
         </div>
 
+        <hr class="separator">
+
+        <h2>MEUS SERVIÇOS</h2>
+        <hr class="separator">
+        <div class="projects-container" style="display: flex; flex-wrap: wrap; justify-content: auto;">
+           
+            <div class="project-card1">
+                <img src="/imagens/power bi logo3.png" alt="logo1">
+                <p><a style="color: white;">Painéis analíticos e eficientes integrados automaticamente a sistemas ou APIs. </a></p>
+                <p></p>
+            </div>
+
+            
+            <div class="project-card1">
+                <img src="/imagens/GCP.png" alt="logo2">
+                <p><a style="color: white;">Integração com APIs do Google Cloud Plataform. </a></p>
+                <p></p>
+            </div>
+            
+            <div class="project-card1">
+                <img src="/imagens/py.png" alt="logo2">
+                <p><a style="color: white;">Criação de Saas utilizando Python.</a></p>
+                <p></p>
+            </div>
+
+         
+
         <!-- Segundo Separador -->
         <hr class="separator">
 
-        <h2>Meus Projetos</h2>
+        <h3>MEUS PROJETOS</h3>
 
         <hr class="separator">
 
@@ -236,7 +279,7 @@
         <div class="projects-container" style="display: flex; flex-wrap: wrap; justify-content: center;">
             <!-- Card Projeto 1 -->
             <div class="project-card">
-                <img src="/imagens/Relatório-de-Vendas.png" alt="Faturamento" class="clickable-img">
+                <img src="/imagens/Relatório-de-Vendas.png" alt="Projeto 1" class="clickable-img">
                 <p><a href="https://app.powerbi.com/view?r=eyJrIjoiZThiM2I3N2QtMzIzZi00MWIwLWI4MzctN2JiYTQ5NGY3NGE2IiwidCI6ImI5ZTAwZGVmLWI1NjQtNDA0Ni05YmJjLWViMWY0MTNhZTY0YSJ9" style="color: white;">Faturamento</a></p>
                 <p>Dashboard para verificar o faturamento durante os meses, conseguimos verificar o produto mais vendido, marca, e o mês com maior faturamento, além da localicadade.</p>
             </div>
@@ -259,13 +302,14 @@
             <div class="project-card">
                 <img src="/imagens/DashBoard-Financeiro.png" alt="Projeto 4" class="clickable-img">
                 <p><a href="https://app.powerbi.com/view?r=eyJrIjoiYzIwMzE0ZDEtZjg4OC00ZDNjLTk2MDYtNjM2NjQ1ZjRjMTE1IiwidCI6ImI5ZTAwZGVmLWI1NjQtNDA0Ni05YmJjLWViMWY0MTNhZTY0YSJ9" style="color: white;">DashBoard Financeiro</a></p>
-                <p>Dashboard para analise e visualização das finanças. </p>
+                <p>Dashboard para analise e visualização das finanças profissionais e até mesmo pessoais.</p>
             </div>
 
             <!-- Card Projeto 5 -->
             <div class="project-card">
                 <img src="/imagens/Agendamento.png" alt="Projeto 5" class="clickable-img">
-                <p><a href="link_do_projeto_5" style="color: white;">Agendamento Integrado ao Google Agenda</a></p>
+                <p><a href="link_do_projeto_5" style="color: white;">Agendamento Integrado ao Google Agenda via API.</a></p>
+                <p>Um projeto realizado para automatizar o agendamento sem precisar de um atendimento humano. </p>
             </div>
         </div>
 
